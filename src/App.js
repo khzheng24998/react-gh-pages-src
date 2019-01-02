@@ -85,15 +85,18 @@ class App extends Component
 
 		return (
 			<div>
-				<img src='images/wallpaper.jpg' style={{width: "100%"}} />
+				<img src='images/wallpaper.png' style={{width: "100%"}} />
       			<div style={{zIndex: 1, position: "absolute", top: 0, left: 0, width: "100%", height: "100%"}}>
 					<div style={topBarStyles}>{dateString}</div>
 					<div style={{display: "inline-block", verticalAlign: "top"}}>
-						<Icon image="images/folder.png" name="About Me" fontColor="white" onOpen={this.handleWindowOpen} />
-						<Icon image="images/folder.png" name="Projects" fontColor="white" onOpen={this.handleWindowOpen} />
 
-						<Icon image="images/folder.png" name="Skills" fontColor="white" onOpen={this.handleWindowOpen} />
+						<Icon image="images/profile.png" name="About Me" fontColor="white" onOpen={this.handleWindowOpen} />
 						<a href="resume.pdf" target="_blank"><Icon image="images/resume.png" name="Resume" fontColor="white" /></a>
+						<Icon image="images/folder.png" name="Projects" fontColor="white" onOpen={this.handleWindowOpen} />
+						<Icon image="images/folder.png" name="Skills" fontColor="white" onOpen={this.handleWindowOpen} />
+						<Icon image="images/folder.png" name="Experience" fontColor="white" onOpen={this.handleWindowOpen} />
+						<Icon image="images/folder.png" name="Coursework" fontColor="white" onOpen={this.handleWindowOpen} />
+						<Icon image="images/folder.png" name="Contact" fontColor="white" onOpen={this.handleWindowOpen} />
 
 						{this.state.showAboutMe && <Window name="About Me" onClose={this.handleWindowClose} />}
 
@@ -106,6 +109,7 @@ class App extends Component
 
 						{this.state.showProjects && <Window name="Projects" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
 						{this.state.showChinaTaste && <Window name="China Taste" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
+						{this.state.showFishFarm && <Window name="Fish Farm" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
 
 					</div>
 
