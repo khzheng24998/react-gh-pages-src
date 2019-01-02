@@ -41,6 +41,9 @@ class App extends Component
 		this.state.showEnvironments = false;
 		this.state.showOther = false;
 
+		this.state.showChinaTaste = false;
+		this.state.showFishFarm = false;
+
 		this.updateState = this.updateState.bind(this);
 		this.handleWindowOpen = this.handleWindowOpen.bind(this);
 		this.handleWindowClose = this.handleWindowClose.bind(this);
@@ -102,8 +105,8 @@ class App extends Component
 						{this.state.showOther && <Window name="Other" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
 
 						{this.state.showProjects && <Window name="Projects" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
+						{this.state.showChinaTaste && <Window name="China Taste" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
 
-						{this.state.showResume && <Window name="Resume" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
 					</div>
 
 				</div>
