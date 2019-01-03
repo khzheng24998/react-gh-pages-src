@@ -80,16 +80,6 @@ class App extends Component
 		this.state.showAboutMe = false;
 		this.state.showSkills = false;
 		this.state.showProjects = false;
-		this.state.showResume = false;
-		this.state.showContact = false;
-		this.state.showLanguages = false;
-		this.state.showLibraries = false;
-		this.state.showDatabases = false;
-		this.state.showEnvironments = false;
-		this.state.showOther = false;
-
-		this.state.showChinaTaste = false;
-		this.state.showFishFarm = false;
 
 		this.updateState = this.updateState.bind(this);
 		this.handleWindowOpen = this.handleWindowOpen.bind(this);
@@ -122,15 +112,8 @@ class App extends Component
 		this.setState(stateObject);
 	}
 
-	handleLogin()
-	{
-		this.setState({loggedIn: true});
-	}
-
-	handleDismiss()
-	{
-		this.setState({showMessageBox: false});
-	}
+	handleLogin() { this.setState({loggedIn: true}); }
+	handleDismiss() { this.setState({showMessageBox: false}); }
 
 	render()
 	{
@@ -168,17 +151,8 @@ class App extends Component
 							<Icon image="images/folder.png" name="Contact" fontColor="white" onOpen={this.handleWindowOpen} />
 
 							{this.state.showAboutMe && <Window name="About Me" onClose={this.handleWindowClose} />}
-
 							{this.state.showSkills && <Window name="Skills" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
-							{this.state.showLanguages && <Window name="Languages" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
-							{this.state.showLibraries && <Window name="Libraries" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
-							{this.state.showDatabases && <Window name="Databases" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
-							{this.state.showEnvironments && <Window name="Environments" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
-							{this.state.showOther && <Window name="Other" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
-
 							{this.state.showProjects && <Window name="Projects" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
-							{this.state.showChinaTaste && <Window name="China Taste" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
-							{this.state.showFishFarm && <Window name="Fish Farm" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
 						</div>
 					)}
 

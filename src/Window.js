@@ -56,59 +56,6 @@ const navButtonRStyles = {
 	marginRight: 5
 }
 
-const pathStyles = {
-	display: "inline-block",
-	verticalAlign: "top",
-	border: "1px solid #808080",
-	borderLeft: "none",
-	height: 18,
-	paddingTop: 1,
-	paddingBottom: 1,
-	paddingRight: 4,
-	paddingLeft: 4,
-	cursor: "pointer"
-}
-
-const pathStylesL = {
-	display: "inline-block",
-	verticalAlign: "top",
-	border: "1px solid #808080",
-	borderRadius: "3px 0px 0px 3px",
-	height: 18,
-	paddingTop: 1,
-	paddingBottom: 1,
-	paddingRight: 4,
-	paddingLeft: 4,
-	cursor: "pointer"
-}
-
-const pathStylesR = {
-	display: "inline-block",
-	verticalAlign: "top",
-	border: "1px solid #808080",
-	borderLeft: "none",
-	borderRadius: "0px 3px 3px 0px",
-	height: 18,
-	paddingTop: 1,
-	paddingBottom: 1,
-	paddingRight: 4,
-	paddingLeft: 4,
-	cursor: "pointer"
-}
-
-const pathStylesM = {
-	display: "inline-block",
-	verticalAlign: "top",
-	border: "1px solid #808080",
-	borderRadius: 3,
-	height: 18,
-	paddingTop: 1,
-	paddingBottom: 1,
-	paddingRight: 4,
-	paddingLeft: 4,
-	cursor: "pointer"
-}
-
 let xOffset = 23;
 let yOffset = 13;
 let zIndex = 1;
@@ -121,6 +68,7 @@ class Window extends Component
 		this.handleWindowClose = this.handleWindowClose.bind(this);
 		this.handleWindowOpen = this.handleWindowOpen.bind(this);
 		this.handleBack = this.handleBack.bind(this);
+		this.handleForward = this.handleForward.bind(this);
 
 		xOffset += 2;
 		yOffset += 2;
@@ -140,13 +88,32 @@ class Window extends Component
 		}
 
 		this.state.path = ["Desktop", this.props.name];
+		this.state.index = 1;
 	}
 
 	handleWindowOpen(name)
 	{
-		let stack = this.state.path;
-		stack.push(name);
-		this.setState({path: stack});
+		let arr = this.state.path;
+		let idx = this.state.index;
+
+		if (idx === arr.length - 1)
+		{
+			arr.push(name);
+			this.setState({path: arr, index: idx + 1});
+		}
+		else
+		{
+			if (arr[idx + 1] !== name)
+			{
+				while (idx !== arr.length - 1)
+					arr.pop();
+
+				arr.push(name);
+				this.setState({path: arr, index: idx + 1});
+			}
+			else
+				this.setState({path: arr, index: idx + 1})
+		}
 	}
 
 	handleWindowClose()
@@ -164,24 +131,31 @@ class Window extends Component
 
 	handleBack()
 	{
-		let stack = this.state.path;
-		if (stack.length !== 1)
+		if (this.state.index > 0)
 		{
-			stack.pop();
-			this.setState({path: stack});	
+			const idx = this.state.index - 1;
+			this.setState({index: idx});
+		}
+	}
+
+	handleForward()
+	{
+		if (this.state.index < this.state.path.length - 1)
+		{
+			const idx = this.state.index + 1;
+			this.setState({index: idx});
 		}
 	}
 
 	render()
 	{
-		const top = this.state.path[this.state.path.length - 1];
 		const path = this.state.path;
 
 		return (<div id="window" style={this.state.styles}>
 
 			<div id="windowBar" style={windowBarStyles}>
 				<img src="images/closebutton.png" height="22" onClick={this.handleWindowClose} style={{cursor: "pointer", display: "inline-block"}} />
-				<p style={{display: "inline-block", color: "white", fontSize: 12, verticalAlign: "top", marginTop: 0, padding: 3}}>{top}</p>
+				<p style={{display: "inline-block", color: "white", fontSize: 12, verticalAlign: "top", marginTop: 0, padding: 3}}>{path[this.state.index]}</p>
 			</div>
 
 			<div id="windowBar2" style={windowBar2Styles}>
@@ -190,34 +164,51 @@ class Window extends Component
 					<img src="images/backwardarrow.png" height="16" />
 				</div>
 
-				<div style={navButtonRStyles}>
+				<div style={navButtonRStyles} onClick={this.handleForward}>
 					<img src="images/forwardarrow.png" height="16" />
 				</div>
 
-				{path.map(function(dirName, index) {
-					
-					let style = pathStyles;
-					if (path.length === 1)
-						style = pathStylesM;
-					else if (index === 0)
-						style = pathStylesL;
-					else if (index === path.length - 1)
-						style = pathStylesR;
+				{path.map((dirName, index) => {
 
-					return <div style={style}>{dirName}</div>; 
+					let style = {
+						display: "inline-block",
+						verticalAlign: "top",
+						border: "1px solid #808080",
+						borderLeft: "none",
+						height: 18,
+						paddingTop: 1,
+						paddingBottom: 1,
+						paddingRight: 4,
+						paddingLeft: 4,
+						backgroundColor: "#5f5f5f",
+						borderRadius: 0
+					}
+
+					if (index === 0)
+					{
+						style.borderRadius = "3px 0px 0px 3px";
+						style.borderLeft = "1px solid #808080";
+					}
+					else if (index === path.length - 1)
+						style.borderRadius = "0px 3px 3px 0px";
+
+					if (path[this.state.index] === dirName)
+						style.backgroundColor = "#4d4d4d";
+
+					return <div style={style}>{dirName}</div>;
 				})}
 
 			</div>
 
 			<div id="windowContents" style={{height: "85%", overflowY: "auto"}}>
 
-				{(top === "Desktop") && <Desktop onOpen={this.handleWindowOpen} />}
-				{(top === "About Me") && <AboutMe onOpen={this.handleWindowOpen} />}
-				{(top === "Projects") && <Projects onOpen={this.handleWindowOpen} />}
-				{(top === "China Taste") && <ChinaTaste onOpen={this.handleWindowOpen} />}
-				{(top === "Fish Farm") && <FishFarm onOpen={this.handleWindowOpen} />}
-				{(top === "Skills") && <Skills onOpen={this.handleWindowOpen} />}
-				{(top === "Languages") && <Languages onOpen={this.handleWindowOpen} />}
+				{(this.state.path[this.state.index] === "Desktop") && <Desktop onOpen={this.handleWindowOpen} />}
+				{(this.state.path[this.state.index] === "About Me") && <AboutMe onOpen={this.handleWindowOpen} />}
+				{(this.state.path[this.state.index] === "Projects") && <Projects onOpen={this.handleWindowOpen} />}
+				{(this.state.path[this.state.index] === "China Taste") && <ChinaTaste onOpen={this.handleWindowOpen} />}
+				{(this.state.path[this.state.index] === "Fish Farm") && <FishFarm onOpen={this.handleWindowOpen} />}
+				{(this.state.path[this.state.index] === "Skills") && <Skills onOpen={this.handleWindowOpen} />}
+				{(this.state.path[this.state.index] === "Languages") && <Languages onOpen={this.handleWindowOpen} />}
 
 			</div>
 
