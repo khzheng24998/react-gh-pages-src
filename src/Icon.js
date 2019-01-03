@@ -12,7 +12,8 @@ const skillLevelBoxStyles = {
 	marginTop: -25
 }
 
-const dict = {
+const dict = {};
+/*
 	"C": 4,
 	"C++": 4,
 	"HTML": 2,
@@ -28,7 +29,7 @@ const dict = {
 	"Node.js": 3,
 	"Linux": 2,
 	"Unity": 1
-}
+}*/
 
 class Icon extends Component 
 {

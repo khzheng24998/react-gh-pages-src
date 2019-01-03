@@ -72,6 +72,8 @@ class App extends Component
 		super(props);
 		this.state = {};
 
+		this.state.openWindows = [];
+
 		this.state.loggedIn = false;
 		this.state.showMessageBox = true;
 
@@ -106,6 +108,10 @@ class App extends Component
 
 	handleWindowOpen(name)
 	{
+		let current = this.state.openWindows;
+		current.push(name);
+		this.setState({openWindows: current})
+
 		const stateObject = this.updateState(name, true);
 		this.setState(stateObject);
 	}
