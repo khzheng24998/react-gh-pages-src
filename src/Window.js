@@ -22,6 +22,53 @@ const windowBarStyles = {
 	fontWeight: 600
 }
 
+const windowBar2Styles = {
+	width: "100%",
+	height: 26,
+	backgroundColor: "#5f5f5f",
+	fontSize: 11,
+	color: "white",
+	fontWeight: 600,
+	borderTop: "1px solid #808080",
+	paddingTop: 4
+}
+
+const navButton1Styles = {
+	display: "inline-block",
+	border: "1px solid #808080",
+	borderRadius: "3px 0px 0px 3px",
+	height: 18,
+	paddingTop: 2,
+	paddingRight: 2,
+	marginLeft: 4,
+	cursor: "pointer"
+}
+
+const navButton2Styles = {
+	display: "inline-block",
+	border: "1px solid #808080",
+	borderLeft: "none",
+	borderRadius: "0px 3px 3px 0px",
+	height: 18,
+	paddingTop: 2,
+	paddingLeft: 2,
+	cursor: "pointer"
+}
+
+const pathStyles = {
+	display: "inline-block",
+	verticalAlign: "top",
+	border: "1px solid #808080",
+	height: 18,
+	paddingTop: 1,
+	paddingBottom: 1,
+	paddingRight: 4,
+	paddingLeft: 4,
+	marginLeft: 3,
+	borderRadius: 3,
+	cursor: "pointer"
+}
+
 let xOffset = 23;
 let yOffset = 13;
 let zIndex = 1;
@@ -77,6 +124,16 @@ class Window extends Component
 					<img src="images/closebutton.png" height="22" onClick={this.handleCloseClick} style={{cursor: "pointer", display: "inline-block"}} />
 					<p style={{display: "inline-block", color: "white", fontSize: 12, position: "absolute", top: -9, left: 25}}>{this.props.name}</p>
 				</div>
+				<div id="windowBar2" style={windowBar2Styles}>
+					<div style={navButton1Styles}>
+						<img src="images/backwardarrow.png" height="16" />
+					</div>
+					<div style={navButton2Styles}>
+						<img src="images/forwardarrow.png" height="16" />
+					</div>
+					<div style={pathStyles}>Desktop</div>
+				</div>
+
 				<div id="windowContents" style={{height: "90%", overflowY: "auto"}}>
 
 				{(this.props.name === "About Me") && (

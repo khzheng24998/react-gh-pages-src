@@ -138,7 +138,7 @@ class App extends Component
 						<div>
 							<div style={loginStyles}>
 								<p style={{color: "white", fontSize: 13, paddingLeft: 15}}>Guest Session</p>
-								<div style={loginButtonStyles} onClick={this.handleLogin}><p style={{position: "absolute", top: 43}}>Log In</p><img src="images/arrow.png" height="20" /></div>
+								<div style={loginButtonStyles} onClick={this.handleLogin}><p style={{position: "absolute", top: 43}}>Log In</p><img src="images/forwardarrow.png" height="20" /></div>
 							</div>
 
 							{this.state.showMessageBox && (
