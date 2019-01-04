@@ -81,7 +81,7 @@ class Icon extends Component
 
 	render()
 	{
-		return (<div style={{paddingLeft: 20, paddingTop: 10, paddingRight: 20, width: 60, display: this.props.display, textAlign: "center"}}>
+		return (<div style={{paddingLeft: 20, paddingTop: 10, paddingRight: 20, width: 60, display: this.props.display, textAlign: "center", verticalAlign: "top"}}>
         	<img src={this.props.image} height="50" width="50" style={{paddingBottom: 0, marginBottom: 0, cursor: "pointer"}} onClick={this.handleIconClick} onMouseOver={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} />
         	<p style={{fontSize: 11, padding: 0, margin: 0, width: 60, color: this.props.fontColor}}>{this.props.name}</p>
         	{this.state.showSkillLevel && (

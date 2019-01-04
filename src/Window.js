@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Icon from './Icon';
-import {Desktop, AboutMe, Skills, Languages, Libraries, Databases, Environments, Projects, ChinaTaste, FishFarm, Experience, CNCSoftware} from './WindowContents';
+import {Desktop, AboutMe, Skills, Languages, LibrariesAndFrameworks, Projects, ChinaTaste, FishFarm, Experience, CNCSoftware} from './WindowContents';
 import './styles.css';
 
 const windowBarStyles = {
@@ -222,6 +222,7 @@ class Window extends Component
 
 				{(this.state.path[this.state.index] === "Skills") && <Skills onOpen={this.handleWindowOpen} />}
 				{(this.state.path[this.state.index] === "Languages") && <Languages onOpen={this.handleWindowOpen} />}
+				{(this.state.path[this.state.index] === "Libraries & Frameworks") && <LibrariesAndFrameworks onOpen={this.handleWindowOpen} />}
 
 				{(this.state.path[this.state.index] === "Experience") && <Experience onOpen={this.handleWindowOpen} />}
 				{(this.state.path[this.state.index] === "CNC Software") && <CNCSoftware onOpen={this.handleWindowOpen} />}

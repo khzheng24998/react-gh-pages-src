@@ -19,8 +19,7 @@ function Desktop(props)
 		<Icon image="images/folder.png" name="Projects" onOpen={props.onOpen} />
 		<Icon image="images/folder.png" name="Experience" onOpen={props.onOpen} />
 		<Icon image="images/folder.png" name="Skills" onOpen={props.onOpen} />
-		<Icon image="images/folder.png" name="Coursework" onOpen={props.onOpen} />
-		<Icon image="images/folder.png" name="Contact" onOpen={props.onOpen} />
+		<Icon image="images/folder.png" name="Contact Me" onOpen={props.onOpen} />
 	</div>);
 }
 
@@ -114,18 +113,18 @@ function CNCSoftware(props)
 	</div>);
 }
 
-
-/* ----------------------------------------- */
-
-
 function Skills(props)
 {
 	return (<div>
 		<Icon image="images/folder.png" name="Languages" onOpen={props.onOpen} />
-		<Icon image="images/folder.png" name="Libraries" onOpen={props.onOpen} />
-		<Icon image="images/folder.png" name="Databases" onOpen={props.onOpen} />
-		<Icon image="images/folder.png" name="Environments" onOpen={props.onOpen} />
-		<Icon image="images/folder.png" name="Other" onOpen={props.onOpen} />
+		<Icon image="images/folder.png" name="Libraries & Frameworks" onOpen={props.onOpen} />
+
+		<Icon image="images/mongodb.png" name="MongoDB" />
+		<Icon image="images/nodejs.png" name="Node.js" />
+		<Icon image="images/linux.png" name="Linux" />
+		<Icon image="images/unity.png" name="Unity" />
+		<Icon image="images/svn.png" name="Subversion" />
+		<Icon image="images/git.png" name="Git" />
 	</div>);
 }
 
@@ -138,34 +137,19 @@ function Languages(props)
 		<Icon image="images/css3.png" name="CSS" />
 		<Icon image="images/javascript.png" name="JavaScript" />
 		<Icon image="images/python.png" name="Python" />
+		<Icon image="images/bash.png" name="&nbsp;&nbsp;Bash&nbsp;&nbsp; (Unix shell)" />
 		<Icon image="images/noimage.png" name="Verilog" />
 	</div>);
 }				
 
-function Libraries(props)
+function LibrariesAndFrameworks(props)
 {
 	return (<div>
 		<Icon image="images/react.png" name="React.js" />
-		<Icon image="images/express.png" name="Express.js" />
 		<Icon image="images/jquery.png" name="jQuery" />
+		<Icon image="images/express.png" name="Express.js" />
 		<Icon image="images/django.png" name="Django" />
 	</div>);
 }
 
-function Databases(props)
-{
-	return (<div>
-		<Icon image="images/mongodb.png" name="MongoDB" />
-	</div>);
-}
-
-function Environments(props)
-{
-	return (<div>
-		<Icon image="images/nodejs.png" name="Node.js" />
-		<Icon image="images/linux.png" name="Linux" />
-		<Icon image="images/unity.png" name="Unity" />
-	</div>);
-}
-
-export {Desktop, AboutMe, Skills, Languages, Libraries, Databases, Environments, Projects, ChinaTaste, FishFarm, Experience, CNCSoftware};
+export {Desktop, AboutMe, Skills, Languages, LibrariesAndFrameworks, Projects, ChinaTaste, FishFarm, Experience, CNCSoftware};
