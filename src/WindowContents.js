@@ -9,14 +9,16 @@ const projectText1 = " is an online ordering system that I'm currently developin
 
 const projectText2 = " was a school project for my Introduction to Computer Graphics course. Using WebGL, my group and I designed a aquarium simulation game. The objective of the game is to earn as much money as possible over a 5 minute period. Each fish in the aquarium generates a certain amount of income per second. To keep the fish alive, the player needs to buy food and feed their fish periodically (the player can control where the food is dropped by using the IJKL keys). All of the models used in the game were custom designed using simple primitives (e.g. spheres, cubes) and applying linear algebra to their transforms in order to produce the desired shapes. The head-up display was implemented using HTML, CSS, JavaScript, and jQuery and overlaying the elements over the scene.";
 
+const experienceText1 = "While I was at CNC Software, Inc., one of the major goals of the company was to modernize their 15+ year old code base. In particular, they wanted to migrate their Mastercam (a CAD/CAM software application) code base from C to C++ to fit more modern object oriented standards. In addition, some users were reporting a decrease in performance after prolonged application usage due to memory leaks from improper memory management. Therefore, a large portion of the work that I did was replacing the usage of old C-style memory allocation (e.g. use of malloc, free) for dynamically sized data structures throughout the application with newer C++ STL containers such as vectors. Most of this work revolved around replacing the use of the Mastercam application's old toolpath entity retrieval API (which relied on C-style manual memory allocation) with a newer interface which used C++ STL containers. In addition, during my time at CNC Software I also performed other tasks as well, such as investigating/fixing defects within the Mastercam application and adding special defines to functions which were exported to 3rd party applications.";
+
 function Desktop(props)
 {
 	return (<div>
 		<Icon image="images/profile.png" name="About Me" onOpen={props.onOpen} />
 		<a href="resume.pdf" target="_blank"><Icon image="images/resume.png" name="Resume" /></a>
 		<Icon image="images/folder.png" name="Projects" onOpen={props.onOpen} />
-		<Icon image="images/folder.png" name="Skills" onOpen={props.onOpen} />
 		<Icon image="images/folder.png" name="Experience" onOpen={props.onOpen} />
+		<Icon image="images/folder.png" name="Skills" onOpen={props.onOpen} />
 		<Icon image="images/folder.png" name="Coursework" onOpen={props.onOpen} />
 		<Icon image="images/folder.png" name="Contact" onOpen={props.onOpen} />
 	</div>);
@@ -56,7 +58,7 @@ function ChinaTaste(props)
 {
 	return (<div>
 		<div style={{padding: 15, width: "60%", display: "inline-block"}}>
-			<img src="images/chinataste3.png" width="100%" />
+			<img src="images/chinataste3.png" width="100%" style={{border: "1px solid black"}} />
 		</div>
 		<div style={{width: "30%", display: "inline-block", verticalAlign: "top", fontSize: 13, paddingRight: 10}}>
 			<p style={{marginBottom: 4}}><strong>Name: </strong>China Taste</p>
@@ -74,7 +76,7 @@ function FishFarm(props)
 {
 	return (<div>
 		<div style={{padding: 15, width: "60%", display: "inline-block"}}>
-			<img src="images/fishfarm2.png" width="100%" />
+			<img src="images/fishfarm2.png" width="100%" style={{border: "1px solid black"}} />
 		</div>
 		<div style={{width: "30%", display: "inline-block", verticalAlign: "top", fontSize: 13, paddingRight: 10}}>
 			<p style={{marginBottom: 4}}><strong>Name: </strong>Fish Farm</p>
@@ -100,6 +102,14 @@ function CNCSoftware(props)
 	return (<div>
 		<div style={{padding: 15, width: "60%", display: "inline-block"}}>
 			<img src="images/mastercam.png" width="100%" style={{border: "1px solid black"}} />
+		</div>
+		<div style={{width: "30%", display: "inline-block", verticalAlign: "top", fontSize: 13, paddingRight: 10}}>
+			<p style={{marginBottom: 4}}><strong>Company: </strong>CNC Software, Inc.</p>
+			<p style={{marginBottom: 4}}><strong>Position: </strong>Software Engineering Intern</p>
+			<p style={{marginBottom: 4}}><strong>Dates: </strong>Jun 2018 - Sep 2018 (4 months)</p>
+		</div>
+		<div style={{padding: 0, paddingLeft: 18}}>
+			<p style={{fontSize: 13, marginTop: 0, paddingRight: 10}}><strong>Description: </strong>{experienceText1}</p>
 		</div>
 	</div>);
 }
