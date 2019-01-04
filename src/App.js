@@ -80,6 +80,7 @@ class App extends Component
 		this.state.showAboutMe = false;
 		this.state.showSkills = false;
 		this.state.showProjects = false;
+		this.state.showExperience = false;
 
 		this.updateState = this.updateState.bind(this);
 		this.handleWindowOpen = this.handleWindowOpen.bind(this);
@@ -142,17 +143,17 @@ class App extends Component
 
 					{this.state.loggedIn && (
 						<div>
-							<Icon image="images/profile.png" name="About Me" fontColor="white" onOpen={this.handleWindowOpen} />
-							<a href="resume.pdf" target="_blank"><Icon image="images/resume.png" name="Resume" fontColor="white" /></a>
-							<Icon image="images/folder.png" name="Projects" fontColor="white" onOpen={this.handleWindowOpen} />
-							<Icon image="images/folder.png" name="Skills" fontColor="white" onOpen={this.handleWindowOpen} />
-							<Icon image="images/folder.png" name="Experience" fontColor="white" onOpen={this.handleWindowOpen} />
-							<Icon image="images/folder.png" name="Coursework" fontColor="white" onOpen={this.handleWindowOpen} />
-							<Icon image="images/folder.png" name="Contact" fontColor="white" onOpen={this.handleWindowOpen} />
+							<Icon image="images/profile.png" name="About Me" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
+							<a href="resume.pdf" target="_blank"><Icon image="images/resume.png" name="Resume" fontColor="white" display="block" /></a>
+							<Icon image="images/folder.png" name="Projects" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
+							<Icon image="images/folder.png" name="Experience" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
+							<Icon image="images/folder.png" name="Skills" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
+							<Icon image="images/folder.png" name="Coursework" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
 
 							{this.state.showAboutMe && <Window name="About Me" onClose={this.handleWindowClose} />}
 							{this.state.showSkills && <Window name="Skills" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
 							{this.state.showProjects && <Window name="Projects" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
+							{this.state.showExperience && <Window name="Experience" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}
 						</div>
 					)}
 

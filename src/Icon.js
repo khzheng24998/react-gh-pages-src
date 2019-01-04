@@ -81,9 +81,9 @@ class Icon extends Component
 
 	render()
 	{
-		return (<div style={{paddingLeft: 20, paddingTop: 10, paddingRight: 20, display: "inline-block", textAlign: "center"}}>
+		return (<div style={{paddingLeft: 20, paddingTop: 10, paddingRight: 20, width: 60, display: this.props.display, textAlign: "center"}}>
         	<img src={this.props.image} height="50" width="50" style={{paddingBottom: 0, marginBottom: 0, cursor: "pointer"}} onClick={this.handleIconClick} onMouseOver={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} />
-        	<p style={{fontSize: 11, padding: 0, margin: 0, width: 55, color: this.props.fontColor}}>{this.props.name}</p>
+        	<p style={{fontSize: 11, padding: 0, margin: 0, width: 60, color: this.props.fontColor}}>{this.props.name}</p>
         	{this.state.showSkillLevel && (
         		<div style={skillLevelBoxStyles}>
         			<p style={{fontSize: 12, fontWeight: 700, textDecoration: "underline", marginBottom: 10}}>Skill Level:</p>
@@ -95,7 +95,9 @@ class Icon extends Component
 }
 
 Icon.defaultProps = {
-	onOpen: function() { return; }
+	onOpen: function() { return; },
+	fontColor: "black",
+	display: "inline-block"
 }
 
 export default Icon;

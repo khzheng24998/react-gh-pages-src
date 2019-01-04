@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
 import Icon from './Icon';
-import {Desktop, AboutMe, Skills, Languages, Libraries, Databases, Environments, Projects, ChinaTaste, FishFarm} from './WindowContents';
-
-const windowStyles = {
-	zIndex: 2,
-	height: "70%",
-	width: "50%",
-	position: "absolute",
-	top: "15%",
-	left: "25%",
-	backgroundColor: "white",
-	borderRadius: 3
-}
+import {Desktop, AboutMe, Skills, Languages, Libraries, Databases, Environments, Projects, ChinaTaste, FishFarm, Experience, CNCSoftware} from './WindowContents';
+import './styles.css';
 
 const windowBarStyles = {
 	width: "100%",
@@ -69,6 +59,8 @@ class Window extends Component
 		this.handleWindowOpen = this.handleWindowOpen.bind(this);
 		this.handleBack = this.handleBack.bind(this);
 		this.handleForward = this.handleForward.bind(this);
+		this.handleMouseEnter = this.handleMouseEnter.bind(this);
+		this.handleMouseLeave = this.handleMouseLeave.bind(this);
 
 		xOffset += 2;
 		yOffset += 2;
@@ -82,13 +74,16 @@ class Window extends Component
 			position: "absolute",
 			top: (yOffset + "%"),
 			left: (xOffset + "%"),
-			backgroundColor: "white",
 			borderRadius: 3,
-			boxShadow: "1px 1px 4px black"
+			boxShadow: "1px 1px 4px black",
+			backgroundColor: "white"
 		}
 
 		this.state.path = ["Desktop", this.props.name];
 		this.state.index = 1;
+
+		this.state.hoverL = false;
+		this.state.hoverR = false;
 	}
 
 	handleWindowOpen(name)
@@ -147,11 +142,27 @@ class Window extends Component
 		}
 	}
 
+	handleMouseEnter(e)
+	{
+		const id = e.target.id;
+		if (id === "navBtnL")
+			this.setState({hoverL: true});
+		else
+			this.setState({hoverR: true});
+	}
+
+	handleMouseLeave()
+	{
+		this.setState({hoverL: false, hoverR: false});
+	}
+
 	render()
 	{
 		const path = this.state.path;
+		const classL = (this.state.hoverL) ? "navBtnEnter" : "navBtnLeave";
+		const classR = (this.state.hoverR) ? "navBtnEnter" : "navBtnLeave";
 
-		return (<div id="window" style={this.state.styles}>
+		return (<div id="window" className="hello" style={this.state.styles}>
 
 			<div id="windowBar" style={windowBarStyles}>
 				<img src="images/closebutton.png" height="22" onClick={this.handleWindowClose} style={{cursor: "pointer", display: "inline-block"}} />
@@ -160,11 +171,11 @@ class Window extends Component
 
 			<div id="windowBar2" style={windowBar2Styles}>
 
-				<div style={navButtonLStyles} onClick={this.handleBack}>
+				<div id="navBtnL" style={navButtonLStyles} className={classL} onClick={this.handleBack} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
 					<img src="images/backwardarrow.png" height="16" />
 				</div>
 
-				<div style={navButtonRStyles} onClick={this.handleForward}>
+				<div id="navBtnR" style={navButtonRStyles} className={classR} onClick={this.handleForward} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
 					<img src="images/forwardarrow.png" height="16" />
 				</div>
 
@@ -204,11 +215,16 @@ class Window extends Component
 
 				{(this.state.path[this.state.index] === "Desktop") && <Desktop onOpen={this.handleWindowOpen} />}
 				{(this.state.path[this.state.index] === "About Me") && <AboutMe onOpen={this.handleWindowOpen} />}
+
 				{(this.state.path[this.state.index] === "Projects") && <Projects onOpen={this.handleWindowOpen} />}
 				{(this.state.path[this.state.index] === "China Taste") && <ChinaTaste onOpen={this.handleWindowOpen} />}
 				{(this.state.path[this.state.index] === "Fish Farm") && <FishFarm onOpen={this.handleWindowOpen} />}
+
 				{(this.state.path[this.state.index] === "Skills") && <Skills onOpen={this.handleWindowOpen} />}
 				{(this.state.path[this.state.index] === "Languages") && <Languages onOpen={this.handleWindowOpen} />}
+
+				{(this.state.path[this.state.index] === "Experience") && <Experience onOpen={this.handleWindowOpen} />}
+				{(this.state.path[this.state.index] === "CNC Software") && <CNCSoftware onOpen={this.handleWindowOpen} />}
 
 			</div>
 

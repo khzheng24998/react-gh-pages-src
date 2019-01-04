@@ -44,6 +44,70 @@ function AboutMe(props)
 	</div>);
 }
 
+function Projects(props)
+{
+	return (<div>
+		<Icon image="images/chinataste.png" name="China Taste" onOpen={props.onOpen} />
+		<Icon image="images/fishfarm.png" name="Fish Farm" onOpen={props.onOpen} />
+	</div>);
+}
+
+function ChinaTaste(props)
+{
+	return (<div>
+		<div style={{padding: 15, width: "60%", display: "inline-block"}}>
+			<img src="images/chinataste3.png" width="100%" />
+		</div>
+		<div style={{width: "30%", display: "inline-block", verticalAlign: "top", fontSize: 13, paddingRight: 10}}>
+			<p style={{marginBottom: 4}}><strong>Name: </strong>China Taste</p>
+			<p style={{marginBottom: 4}}><strong>URL: </strong>Coming soon</p>
+			<p style={{marginBottom: 4}}><strong>Contributors: </strong>Kenny Zheng</p>
+			<p style={{marginBottom: 4}}><strong>Technologies Used: </strong>HTML, CSS, JavaScript, jQuery, Bootstrap, Node.js, Express, MongoDB</p>
+		</div>
+		<div style={{padding: 0, paddingLeft: 18}}>
+			<p style={{fontSize: 13, marginTop: 0, paddingRight: 10}}><strong>Description: </strong><i>China Taste</i>{projectText1}</p>
+		</div>
+	</div>);
+}
+
+function FishFarm(props)
+{
+	return (<div>
+		<div style={{padding: 15, width: "60%", display: "inline-block"}}>
+			<img src="images/fishfarm2.png" width="100%" />
+		</div>
+		<div style={{width: "30%", display: "inline-block", verticalAlign: "top", fontSize: 13, paddingRight: 10}}>
+			<p style={{marginBottom: 4}}><strong>Name: </strong>Fish Farm</p>
+			<p style={{marginBottom: 4}}><strong>URL: </strong>Coming soon</p>
+			<p style={{marginBottom: 4}}><strong>Contributors: </strong>Kenny Zheng, Ishan Sharma, Yeon Taek Jeong, Nikhil Swaminathan, Deven Agrawal</p>
+			<p style={{marginBottom: 4}}><strong>Technologies Used: </strong>HTML, CSS, JavaScript, jQuery, Bootstrap, WebGL</p>
+		</div>
+		<div style={{padding: 0, paddingLeft: 18}}>
+			<p style={{fontSize: 13, marginTop: 0, paddingRight: 10}}><strong>Description: </strong><i>Fish Farm</i>{projectText2}</p>
+		</div>
+	</div>);
+}
+
+function Experience(props)
+{
+	return (<div>
+		<Icon image="images/cnc.png" name="CNC Software" onOpen={props.onOpen} />
+	</div>);
+}
+
+function CNCSoftware(props)
+{
+	return (<div>
+		<div style={{padding: 15, width: "60%", display: "inline-block"}}>
+			<img src="images/mastercam.png" width="100%" style={{border: "1px solid black"}} />
+		</div>
+	</div>);
+}
+
+
+/* ----------------------------------------- */
+
+
 function Skills(props)
 {
 	return (<div>
@@ -94,48 +158,4 @@ function Environments(props)
 	</div>);
 }
 
-function Projects(props)
-{
-	return (<div>
-		<Icon image="images/chinataste.png" name="China Taste" onOpen={props.onOpen}/>
-		<Icon image="images/fishfarm.png" name="Fish Farm" onOpen={props.onOpen}/>
-	</div>);
-}
-
-function ChinaTaste(props)
-{
-	return (<div>
-		<div style={{padding: 15, width: "60%", display: "inline-block"}}>
-			<img src="images/chinataste3.png" width="100%" />
-		</div>
-		<div style={{width: "30%", display: "inline-block", verticalAlign: "top", fontSize: 13, paddingRight: 10}}>
-			<p style={{marginBottom: 4}}><strong>Name: </strong>China Taste</p>
-			<p style={{marginBottom: 4}}><strong>URL: </strong>Coming soon</p>
-			<p style={{marginBottom: 4}}><strong>Contributors: </strong>Kenny Zheng</p>
-			<p style={{marginBottom: 4}}><strong>Technologies Used: </strong>HTML, CSS, JavaScript, jQuery, Bootstrap, Node.js, Express, MongoDB</p>
-		</div>
-		<div style={{padding: 0, paddingLeft: 18}}>
-			<p style={{fontSize: 13, marginTop: 0, paddingRight: 10}}><strong>Description: </strong><i>China Taste</i>{projectText1}</p>
-		</div>
-	</div>);
-}
-
-function FishFarm(props)
-{
-	return (<div>
-		<div style={{padding: 15, width: "60%", display: "inline-block"}}>
-			<img src="images/fishfarm2.png" width="100%" />
-		</div>
-		<div style={{width: "30%", display: "inline-block", verticalAlign: "top", fontSize: 13, paddingRight: 10}}>
-			<p style={{marginBottom: 4}}><strong>Name: </strong>Fish Farm</p>
-			<p style={{marginBottom: 4}}><strong>URL: </strong>Coming soon</p>
-			<p style={{marginBottom: 4}}><strong>Contributors: </strong>Kenny Zheng, Ishan Sharma, Yeon Taek Jeong, Nikhil Swaminathan, Deven Agrawal</p>
-			<p style={{marginBottom: 4}}><strong>Technologies Used: </strong>HTML, CSS, JavaScript, jQuery, Bootstrap, WebGL</p>
-		</div>
-		<div style={{padding: 0, paddingLeft: 18}}>
-			<p style={{fontSize: 13, marginTop: 0, paddingRight: 10}}><strong>Description: </strong><i>Fish Farm</i>{projectText2}</p>
-		</div>
-	</div>);
-}
-
-export {Desktop, AboutMe, Skills, Languages, Libraries, Databases, Environments, Projects, ChinaTaste, FishFarm};
+export {Desktop, AboutMe, Skills, Languages, Libraries, Databases, Environments, Projects, ChinaTaste, FishFarm, Experience, CNCSoftware};
