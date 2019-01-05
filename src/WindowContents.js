@@ -19,7 +19,7 @@ function Desktop(props)
 		<Icon image="images/folder.png" name="Projects" onOpen={props.onOpen} />
 		<Icon image="images/folder.png" name="Experience" onOpen={props.onOpen} />
 		<Icon image="images/folder.png" name="Skills" onOpen={props.onOpen} />
-		<Icon image="images/folder.png" name="Contact Me" onOpen={props.onOpen} />
+		<Icon image="images/folder.png" name="Social" onOpen={props.onOpen} />
 	</div>);
 }
 
@@ -152,4 +152,14 @@ function LibrariesAndFrameworks(props)
 	</div>);
 }
 
-export {Desktop, AboutMe, Skills, Languages, LibrariesAndFrameworks, Projects, ChinaTaste, FishFarm, Experience, CNCSoftware};
+function Social(props)
+{
+	return (<div>
+		<a href="https://www.facebook.com/kenny.zheng.9" target="_blank"><Icon image="images/facebook.png" name="Facebook" /></a>
+		<a href="https://www.instagram.com/khzheng/" target="_blank"><Icon image="images/instagram.png" name="Instagram" /></a>
+		<a href="https://www.linkedin.com/in/kenny-zheng-031ab0143/" target="_blank"><Icon image="images/linkedin.png" name="LinkedIn" /></a>
+		<a href="https://github.com/khzheng24998" target="_blank"><Icon image="images/github.png" name="GitHub" /></a>
+	</div>);
+}
+
+export {Desktop, AboutMe, Skills, Languages, LibrariesAndFrameworks, Projects, ChinaTaste, FishFarm, Experience, CNCSoftware, Social};
