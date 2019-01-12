@@ -144,12 +144,15 @@ class App extends Component
 
 					{this.state.loggedIn && (
 						<div>
-							<Icon image="images/profile.png" name="About Me" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
-							<a href="resume.pdf" target="_blank"><Icon image="images/resume.png" name="Resume" fontColor="white" display="block" /></a>
-							<Icon image="images/folder.png" name="Projects" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
-							<Icon image="images/folder.png" name="Experience" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
-							<Icon image="images/folder.png" name="Skills" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
-							<Icon image="images/folder.png" name="Social" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
+
+							<div id="col-1" style={{width: 65, padding: 0}}>
+								<Icon image="images/profile.png" name="About Me" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
+								<a href="resume.pdf" target="_blank"><Icon image="images/resume.png" name="Resume" fontColor="white" display="block" /></a>
+								<Icon image="images/folder.png" name="Projects" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
+								<Icon image="images/folder.png" name="Experience" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
+								<Icon image="images/folder.png" name="Skills" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
+								<Icon image="images/folder.png" name="Social" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
+							</div>
 
 							{this.state.showAboutMe && <Window name="About Me" onClose={this.handleWindowClose} />}
 							{this.state.showSkills && <Window name="Skills" onOpen={this.handleWindowOpen} onClose={this.handleWindowClose} />}

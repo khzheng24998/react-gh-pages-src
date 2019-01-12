@@ -148,7 +148,6 @@ function LibrariesAndFrameworks(props)
 		<Icon image="images/react.png" name="React.js" />
 		<Icon image="images/jquery.png" name="jQuery" />
 		<Icon image="images/express.png" name="Express.js" />
-		<Icon image="images/django.png" name="Django" />
 	</div>);
 }
 
