@@ -63,9 +63,9 @@ const messageBoxStyles = {
 	paddingTop: 4
 }
 
-const message1 = "Hello! Wondering if you're in the right place? Yes, this is actually my personal website. I tried to make it a little bit different than most other personal websites that you see nowadays but I hope that the design doesn't come off as too tacky or unprofessional. Anyways, just click on 'Log In' to check out the rest of site!";
+const message1 = "Hello! Wondering if you're in the right place? Yes, this is actually my personal website. I tried to make it a little bit different than most other personal websites that you see nowadays but I hope that the design doesn't come off as too tacky. Anyways, just click on 'Log In' to check out the rest of site!";
 
-class App extends Component 
+class App extends Component
 {
 	constructor(props)
 	{
@@ -123,7 +123,7 @@ class App extends Component
 				<img src='images/wallpaper.png' style={{width: "100%"}} />
       			<div style={{zIndex: 1, position: "absolute", top: 0, left: 0, width: "100%", height: "100%"}}>
 					<div style={topBarStyles}><TimeComponent /></div>
-					
+
 					{!this.state.loggedIn && (
 						<div>
 							<div style={loginStyles}>
@@ -145,7 +145,7 @@ class App extends Component
 						<div>
 
 							<div id="col-1" style={{width: 65, padding: 0}}>
-								<Icon image="images/profile.png" name="About Me" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
+								<Icon image="images/profile.jpg" name="About Me" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
 								<a href="resume.pdf" target="_blank"><Icon image="images/resume.png" name="Resume" fontColor="white" display="block" /></a>
 								<Icon image="images/folder.png" name="Projects" fontColor="white" display="block" onOpen={this.handleWindowOpen} />
 								<Icon image="images/folder.png" name="Experience" fontColor="white" display="block" onOpen={this.handleWindowOpen} />

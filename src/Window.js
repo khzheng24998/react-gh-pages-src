@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Icon from './Icon';
-import {Desktop, AboutMe, Skills, Languages, LibrariesAndFrameworks, Projects, ChinaTaste, FishFarm, Experience, CNCSoftware, Social} from './WindowContents';
+import {Desktop, AboutMe, Skills, Languages, LibrariesAndFrameworks, Databases, Projects, ChinaTaste, FishFarm, Experience, CNCSoftware, Symantec, Social} from './WindowContents';
 import './styles.css';
 
 const windowBarStyles = {
@@ -50,7 +50,7 @@ let xOffset = 23;
 let yOffset = 13;
 let zIndex = 1;
 
-class Window extends Component 
+class Window extends Component
 {
 	constructor(props)
 	{
@@ -224,9 +224,11 @@ class Window extends Component
 				{(this.state.path[this.state.index] === "Skills") && <Skills onOpen={this.handleWindowOpen} />}
 				{(this.state.path[this.state.index] === "Languages") && <Languages onOpen={this.handleWindowOpen} />}
 				{(this.state.path[this.state.index] === "Libraries & Frameworks") && <LibrariesAndFrameworks onOpen={this.handleWindowOpen} />}
+				{(this.state.path[this.state.index] === "Databases") && <Databases onOpen={this.handleWindowOpen} />}
 
 				{(this.state.path[this.state.index] === "Experience") && <Experience onOpen={this.handleWindowOpen} />}
 				{(this.state.path[this.state.index] === "CNC Software") && <CNCSoftware onOpen={this.handleWindowOpen} />}
+				{(this.state.path[this.state.index] === "Symantec") && <Symantec onOpen={this.handleWindowOpen} />}
 
 			</div>
 
