@@ -120,7 +120,8 @@ class App extends Component
 	{
 		return (
 			<div>
-				<img src='images/wallpaper.png' style={{width: "100%"}} />
+				<img src='images/wallpaper.png' style={{width: "100%", verticalAlign: "bottom", paddingBottom: 0, marginBottom: 0}} />
+				<img src='images/wallpaper_mirrored.png' style={{width: "100%", verticalAlign: "top", paddingTop: 0, marginTop: 0}} />
       			<div style={{zIndex: 1, position: "absolute", top: 0, left: 0, width: "100%", height: "100%"}}>
 					<div style={topBarStyles}><TimeComponent /></div>
 

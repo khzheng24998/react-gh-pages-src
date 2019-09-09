@@ -27,8 +27,8 @@ function Desktop(props)
 
 function AboutMe(props)
 {
-	return (<div>
-		<div style={{padding: 10, width: "35%", display: "inline-block"}}>
+	return (<div style={{display: "flex"}}>
+		<div style={{paddingTop: 10, paddingLeft: 10, minWidth: "35%", display: "inline-block"}}>
 			<img src="images/profile.jpg" width="100%" />
 			<div>
 				<p style={{marginTop: 5, textDecoration: "underline"}}><strong>Fun Facts</strong></p>
@@ -41,9 +41,9 @@ function AboutMe(props)
 				</ul>
 			</div>
 		</div>
-		<div style={{width: "60%", display: "inline-block", verticalAlign: "top"}}>
-			<p style={{fontSize: 13, marginTop: 8}}>{bioText1}</p>
-			<p style={{fontSize: 13, marginTop: 8}}>{bioText2}</p>
+		<div style={{minWidth: "60%", display: "inline-block", verticalAlign: "top", padding: 10}}>
+			<p style={{fontSize: 13, marginTop: 0, marginRight: 15}}>{bioText1}</p>
+			<p style={{fontSize: 13, marginTop: 8, marginRight: 15}}>{bioText2}</p>
 		</div>
 	</div>);
 }
